@@ -4,28 +4,28 @@ const prev = document.querySelector('.modal__left-btn');
 const next = document.querySelector('.modal__right-btn');
 const entities = [
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/beach.jpg'
+        img: './img/beach.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/cherry.jpg'
+        img: './img/cherry.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/flowers.jpg'
+        img: './img/flowers.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/landscape.jpeg'
+        img: './img/landscape.jpeg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/mountains.jpg'
+        img: './img/mountains.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/paris.jpg'
+        img: './img/paris.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/waterfall.jpg'
+        img: './img/waterfall.jpg'
     },
     {
-        img: 'C:/Users/Avror_000/Desktop/gallery/img/wave.jpg'
+        img: './img/wave.jpg'
     }
 ]
 
@@ -51,13 +51,11 @@ function hideModal() {
 
 function showNextSlide() {
     slideIndex = (slideIndex + 1) % slideCount;
-    console.log(slideIndex)
     updateSlider();
 }
 
 function showPreviousSlide() {
     slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-    console.log(slideIndex)
     updateSlider();
 }
 
@@ -68,5 +66,13 @@ function updateSlider() {
         }
     });
 }
+
+document.addEventListener('keydown', (e) => {
+    if (e.code == 'ArrowLeft' || e.code == 'ArrowDown') {
+        showPreviousSlide();
+    } else if (e.code == 'ArrowRight' || e.code == 'ArrowUp') {
+        showNextSlide();
+    }
+});
 
 updateSlider();

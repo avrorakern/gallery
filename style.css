@@ -2,8 +2,13 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    min-height: 100vh;
     margin: 0;
+    padding: 0;
+}
+
+body {
     background: linear-gradient(126deg, rgba(255, 255, 255, 0.00) 0%, rgba(67, 71, 67, 0.60) 100%);
     background-repeat: no-repeat;
 }
@@ -28,13 +33,14 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: auto;
     background: rgba(0, 0, 0, 0.9);
     padding: 10% 0 10% 0;
 }
 
 .modal__content {
+    position: relative;
     margin: auto;
     padding: 1%;
     display: block;
@@ -46,10 +52,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1%;
+    gap: 7%;
 }
 
 #modal__img {
     width: 100%;
     height: 20rem;
+}
+
+.modal__left-btn, .modal__right-btn {
+    flex-shrink: 0;
 }
